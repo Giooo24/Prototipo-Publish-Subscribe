@@ -11,9 +11,9 @@ Este repositorio contiene un prototipo de mensajería Publish/Subscribe utilizan
 ### Iniciar el broker RabbitMQ
 
 Ejecutar el siguiente comando en la máquina principal para iniciar el broker RabbitMQ:
-
+```bash
 sudo docker run -d --name rabbitmq-broker -p 5672:5672 -p 15672:15672 rabbitmq:3-management
-
+```
 Posteriormente, ejecutar los publisher en la misma máquina y en la segunda máquina los subscriber. Para esta segunda máquina se utilizó Multipass, que  permite crear VMs Ubuntu.
 
 ## Video de Ejecución
