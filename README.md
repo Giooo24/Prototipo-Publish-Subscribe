@@ -1,25 +1,22 @@
+# Prototipo Publish/Subscribe con RabbitMQ
 
-    <h1>Prototipo Publish/Subscribe con RabbitMQ</h1>
-    <p>Este repositorio contiene un prototipo de mensajería Publish/Subscribe usando RabbitMQ. El sistema está distribuido en dos máquinas: una para el broker y los publicadores, y otra para los suscriptores. Incluye publicadores y suscriptores en Python y JavaScript.</p>
+Este repositorio contiene un prototipo de mensajería Publish/Subscribe utilizando RabbitMQ. El sistema está distribuido en dos máquinas: una para el broker y los publicadores, y otra para los suscriptores. Los publicadores y suscriptores están implementados en Python y JavaScript.
 
-    <h2>Pasos de instalación y ejecución</h2>
-    <ol>
-        <li><strong>Iniciar el broker RabbitMQ</strong> en la máquina principal con Docker:
-            <pre><code>sudo docker run -d --name rabbitmq-broker -p 5672:5672 -p 15672:15672 rabbitmq:3-management</code></pre>
-        </li>
-        <li><strong>Instalar dependencias</strong> para los scripts de cada lenguaje:
-            <ul>
-                <li>Python: <code>pip install pika</code></li>
-                <li>JavaScript: <code>npm install amqplib</code></li>
-            </ul>
-        </li>
-        <li><strong>Ejecutar publicadores</strong> en la máquina del broker:
-            <pre><code>python pub_python.py
-node pub_javascript.js</code></pre>
-        </li>
-        <li><strong>Ejecutar suscriptores</strong> en la máquina de suscriptores:
-            <pre><code>python sub_python.py
-node sub_javascript.js</code></pre>
-        </li>
-    </ol>
-</html>
+## Requisitos
+
+- Docker (para ejecutar el contenedor de RabbitMQ)
+- Python 3 y `pika` para el cliente de Python
+- Node.js y `amqplib` para el cliente de JavaScript
+
+### Iniciar el broker RabbitMQ
+
+Ejecutar el siguiente comando en la máquina principal para iniciar el broker RabbitMQ:
+
+sudo docker run -d --name rabbitmq-broker -p 5672:5672 -p 15672:15672 rabbitmq:3-management
+
+Posteriormente, ejecutar los publisher en la misma máquina y en la segunda máquina los subscriber. Para esta segunda máquina se utilizó Multipass, que  permite crear VMs Ubuntu.
+
+## Video de Ejecución
+
+Ejecución del prototipo en el siguiente enlace: [Video de Ejecución](https://youtu.be/4oWaccE2DOY)
+
